@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class WebViewScreen extends StatefulWidget {
-  const WebViewScreen({Key? key}) : super(key: key);
+  const WebViewScreen(Set<Key?> set, {super.key});
 
   @override
   State<WebViewScreen> createState() => _WebViewScreenState();
@@ -44,14 +44,8 @@ class _WebViewScreenState extends State<WebViewScreen> {
           PopupMenuButton<String>(
             onSelected: _onMenuSelected,
             itemBuilder: (context) => const [
-              PopupMenuItem(
-                value: 'fechar',
-                child: Text('Fechar'),
-              ),
-              PopupMenuItem(
-                value: 'sobre',
-                child: Text('Sobre'),
-              ),
+              PopupMenuItem(value: 'fechar', child: Text('Fechar')),
+              PopupMenuItem(value: 'sobre', child: Text('Sobre')),
             ],
           ),
         ],
